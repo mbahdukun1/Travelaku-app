@@ -16,40 +16,40 @@
     <main>
 
         <div class="container">
-            <h3 style="margin-top: 25px;" class="pb-2 border-bottom">Form Pemesanan</h3>
-            <img src="travelaku.png" class="img-circle" alt="Cinque Terre">
+            <h3 style="margin-top: 25px;" class="pb-2 border-bottom">BOOKING FORM</h3>
+            <img src="foto/travelaku remove bg.jpg" class="img-circle" alt="Cinque Terre">
             <div class="row">
                 <div class="col-8">
                     <!-- Form Pemesanan Tiket Wisata -->
                     <form method="post" action="pesanTiket.php">
                         <div class="mb-3 row">
-                            <label for="inputNama" class="col-sm-2 col-form-label">Nama Lengkap</label>
+                            <label for="inputNama" class="col-sm-2 col-form-label">Full Name</label>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control" id="inputNama" placeholder="Nama Lengkap"
+                                <input type="text" class="form-control" id="inputNama" placeholder="Full Name"
                                     name=namaLengkap>
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="inputIdentitas" class="col-sm-2 col-form-label">Nomor Identitas</label>
+                            <label for="inputIdentitas" class="col-sm-2 col-form-label">Id</label>
                             <div class="col-sm-5">
                                 <input type="text" class="form-control" id="inputIdentitas"
-                                    placeholder="Nomor Identitas" name=nomorIdentitas minlength="16" maxlength="16">
+                                    placeholder="Id" name=nomorIdentitas minlength="16" maxlength="16">
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="inputNoHp" class="col-sm-2 col-form-label">No. HP</label>
+                            <label for="inputNoHp" class="col-sm-2 col-form-label">Phone Number</label>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control" id="inputNoHp" placeholder="No Hp" name=noHp
+                                <input type="text" class="form-control" id="inputNoHp" placeholder="Phone Number" name=noHp
                                     minlength="11" maxlength="12">
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="inputWisata" class="col-sm-2 col-form-label">Tempat Wisata</label>
+                            <label for="inputWisata" class="col-sm-2 col-form-label">Destination</label>
                             <div class="col-sm-5">
                                 <select id="inputWisata" class="form-select" placeholder="Tempat Wisata" name="wisata">
-                                    <option value="Datau Toba">Datau Toba</option>
-                                    <option value="Bromo Mountain">Bromo Mountain</option>
-                                    <option value="Gili Terawang">Gili Terawang</option>
+                                    <option value="Datau Toba">Lake Toba</option>
+                                    <option value="Bromo Mountain">Mount Bromo</option>
+                                    <option value="Gili Terawang">Gili Trawangan</option>
                                     <option value="Semeru">Semeru</option>
                                     <option value="Bali">Bali</option>
                                     <option value="Lombok">Lombok</option>
@@ -57,25 +57,24 @@
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="inputTanggal" class="col-sm-2 col-form-label">Tanggal Kunjungan</label>
+                            <label for="inputTanggal" class="col-sm-2 col-form-label">Visit Date</label>
                             <div class="col-sm-5">
                                 <input type="date" data-date-format="DD/MM/YYY" class="form-control" id="inputTanggal"
                                     placeholder="Tanggal Kunjungan" name=tanggal required autofocus>
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="inputPengunjungDewasa" class="col-sm-2 col-form-label">Pengunjung Dewasa</label>
+                            <label for="inputPengunjungDewasa" class="col-sm-2 col-form-label">Adults</label>
                             <div class="col-sm-5">
                                 <input type="number" class="form-control" id="inputPengunjungDewasa"
-                                    placeholder="Pengunjung Dewasa" name=jumlahDewasa>
+                                    placeholder="Adults" name=jumlahDewasa>
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="inputPengunjungAnak" class="col-sm-2 col-form-label">Pengunjung
-                                Anak-anak</label>
+                            <label for="inputPengunjungAnak" class="col-sm-2 col-form-label">Children</label>
                             <div class="col-sm-5">
                                 <input type="number" class="form-control" id="inputPengunjungAnak"
-                                    placeholder="Pengunjung Anak-anak" name=jumlahAnakAnak>
+                                    placeholder="Children" name=jumlahAnakAnak>
                             </div>
                         </div>
                         <!-- <div class="mb-3 row">
@@ -97,15 +96,15 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="agree" name="agree">
                                     <label class="form-check-label" for="gridCheck">
-                                        Saya telah membaca semua persyaratan diatas dan menyetujui semua persyaratan
+                                        I have agreed to the terms and conditions.
                                     </label>
                                 </div>
                             </div>
                         </div>
                         <!-- <button type="Button" class="btn btn-primary" name="hitungTotalBayar"
                             id="hitungTotalBayar">Hitung Total Bayar</button> -->
-                        <button type="submit" class="btn btn-primary" name="pesanTiket" id="pesanTiket" onClick="location.href='order.html'">Pesan
-                            Tiket</button>
+                        <button type="submit" class="btn btn-primary" name="pesanTiket" id="pesanTiket" onClick="location.href='order.html'">Order
+                            Ticket</button>
                         <button type="reset" class="btn btn-danger" name="cancel" onClick="location.href='index.html'">Cancel Order</button>
                         <div class="mb-3 row"></div>
                     </form>
