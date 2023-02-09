@@ -24,10 +24,16 @@
     color: #fff;
     text-align: center;
     position: fixed;
-    border-bottom: 1px solid #b1b1b1;
     line-height: 60px;
     width: 100%;
     transition:background-color 0.5s ease;
+    background: transparent;
+    color: #333;
+  }
+
+  nav.is-on-top {
+    background-color: #fff;
+    border-bottom: 1px solid #b1b1b1;
   }
   
   nav.putih {
@@ -65,7 +71,7 @@
   }
   
   nav ul li a {
-    color: #fff;
+    color: inherit;
     text-align: center;
     padding: 0px 16px 0px 16px;
     text-decoration: none;
