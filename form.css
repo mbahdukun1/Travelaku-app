@@ -1,0 +1,10 @@
+body {
+  background-image: url("./foto/wood.jpg");
+}
+.content-container {
+  border-radius: 30px;
+  background-color: rgba(152, 149, 149, 0.7);
+  margin: 60px auto;
+  width: 90%;
+  padding: 20px 0;
+}

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="order.css" />
+    <title>Payment Receipt</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  </head>
+
+  <body>
+    <div class="invoice-box">
+      <div style="text-align: center"><img src="/foto/travelaku remove bg.jpg" style="width: 45%; max-width: 600px; align-items: center; padding-top: 10px" YOUR INVOICE>
+      <div style="text-align: center; padding: 1px">YOUR INVOICE</div>
+      <div style="text-align: center; padding-top: 1px">PLEASE PAY BEFORE THE DUE TIME</div>
+      <table cellpadding="0" cellspacing="0">
+        <tr class="top">
+          <td colspan="2">
+            <table>
+              <tr>
+                <td class="title"></td>
+
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr class="information">
+          <td colspan="2">
+            <table>
+              <tr>
+                <td>
+                  Name : <span id="namaPemesan"></span><br />
+                  Email : <span id="identitasPemesan"></span><br />
+                  <!-- Email 	:<br /> -->
+                  Phone Number: <span id="noHpPemesan"></span>
+                </td>
+
+                <td style="padding-top: 1px">
+                  Created: <span id="dateCreated"></span><br />
+                  Due time: <span id="dateExpired"></span>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr class="heading">
+          <td>Payment Method</td>
+
+          <td></td>
+        </tr>
+
+        <tr class="details">
+          <td>Virtual Account BCA</td>
+
+          <td>2078092132251</td>
+        </tr>
+        <tr class="details">
+          <td>Virtual Account Mandiri</td>
+
+          <td>7080890912221</td>
+        </tr>
+        <tr class="details">
+          <td>Virtual Account Bank Jago</td>
+
+          <td>6222218990123</td>
+        </tr>
+
+        <tr class="heading">
+          <td>Quantity</td>
+
+          <td></td>
+        </tr>
+
+        <tr class="item">
+          <td>Adult</td>
+
+          <td><span id="jumlahDewasa"></span></td>
+        </tr>
+
+        <tr class="item">
+          <td>Children</td>
+
+          <td><span id="jumlahAnakAnak"></span></td>
+        </tr>
+
+        <tr class="heading">
+          <td>Your Trip to <span id="namaWisata"></span></td>
+
+          <td>Price</td>
+        </tr>
+
+        <!-- <tr class="item">
+					<td>Trip to <span id="namaWisata"></span></td>
+
+					<td></td>
+				</tr> -->
+
+        <tr class="item">
+          <td>Adult</td>
+
+          <td><span id="totalAdultPrice"></span></td>
+        </tr>
+
+        <tr class="item">
+          <td>Children</td>
+
+          <td><span id="totalChildrenPrice"></span></td>
+        </tr>
+
+        <tr class="total">
+          <td></td>
+
+          <td>Total: <span id="totalHarga"></span></td>
+        </tr>
+      </table>
+
+      <a class="btn btn-warning" href="index.html" role="button">Back To Main Page</a>
+    </div>
+
+    <script src="/database/database.js"></script>
+    <script type="text/javascript">
+      /* 
+			http://localhost:8080/invoice.html?namaLengkap=shashaj&nomorIdentitas=3239293829332332&
+			noHp=123456789010&wisata=gili3&tanggal=2023-02-17&jumlahDewasa=1&jumlahAnakAnak=1&
+			hargaTiketDewasa=Rp.+3000000&hargaTiketAnak=Rp.+2000000&totalBayar=Rp.+3000000&agree=on&pesanTiket=
+			*/
+
+      function getMonthName(monthNum) {
+        let monthName = "";
+
+        switch (month) {
+          case 1:
+            monthName = "January";
+            break;
+          case 2:
+            monthName = "February";
+            break;
+          case 3:
+            monthName = "Maret";
+            break;
+          case 4:
+            monthName = "April";
+            break;
+          case 5:
+            monthName = "May";
+            break;
+          case 6:
+            monthName = "June";
+            break;
+          case 7:
+            monthName = "July";
+            break;
+          case 8:
+            monthName = "August";
+            break;
+          case 9:
+            monthName = "September";
+            break;
+          case 10:
+            monthName = "October";
+            break;
+          case 11:
+            monthName = "November";
+            break;
+          case 12:
+            monthName = "December";
+            break;
+        }
+
+        return monthName;
+      }
+
+      const date = new Date();
+
+      let day = date.getDate();
+      let month = date.getMonth() + 1;
+      let year = date.getFullYear();
+
+      const tomorrow = new Date();
+      tomorrow.setDate(date.getDate() + 1);
+
+      let dayExpired = tomorrow.getDate();
+      let monthExpired = tomorrow.getMonth() + 1;
+      let yearExpired = tomorrow.getFullYear();
+
+      let currentDate = `${getMonthName(month)} ${day}, ${year}`;
+      let expiredDate = `${getMonthName(monthExpired)} ${dayExpired}, ${yearExpired}`;
+
+      document.getElementById("dateCreated").innerText = currentDate;
+      document.getElementById("dateExpired").innerText = expiredDate;
+
+      let params = new URLSearchParams(location.search);
+
+      let namaLengkapPemesan = params.get("namaLengkap");
+      let nomorIdentitasPemesan = params.get("nomorIdentitas");
+      let noHpPemesan = params.get("noHp");
+      let wisataPemesan = params.get("wisata");
+      let tanggalPemesan = params.get("tanggal");
+      let jumlahDewasaPemesan = params.get("jumlahDewasa");
+      let jumlahAnakAnakPemesan = params.get("jumlahAnakAnak");
+      let hargaTiketDewasaPemesan = params.get("hargaTiketDewasa");
+      let hargaTiketAnakPemesan = params.get("hargaTiketAnak");
+      let totalBayarPemesan = params.get("totalBayar");
+      let agreePemesan = params.get("agree");
+
+      // console.log(namaLengkapPemesan, nomorIdentitasPemesan, noHpPemesan, wisataPemesan, tanggalPemesan,
+      // 	jumlahDewasaPemesan, jumlahAnakAnakPemesan, hargaTiketDewasaPemesan, hargaTiketAnakPemesan, totalBayarPemesan, agreePemesan);
+
+      document.getElementById("namaPemesan").innerText = namaLengkapPemesan;
+      document.getElementById("identitasPemesan").innerText = nomorIdentitasPemesan;
+      document.getElementById("noHpPemesan").innerText = noHpPemesan;
+      document.getElementById("jumlahDewasa").innerText = jumlahDewasaPemesan;
+
+      if (jumlahAnakAnakPemesan.length === 0) {
+        jumlahAnakAnakPemesan = "0";
+      }
+
+      document.getElementById("jumlahAnakAnak").innerText = jumlahAnakAnakPemesan;
+
+      const paketTravel = getDataPaketTravelById(wisataPemesan);
+
+      document.getElementById("namaWisata").innerText = paketTravel.place;
+
+      let subTotalHargaDewasa = paketTravel.hargaTicketDewasa * Number(jumlahDewasaPemesan);
+      document.getElementById("totalAdultPrice").innerText = subTotalHargaDewasa;
+
+      let subTotalHargaAnak = paketTravel.hargaTicketAnak * Number(jumlahAnakAnakPemesan);
+      document.getElementById("totalChildrenPrice").innerText = subTotalHargaAnak;
+      document.getElementById("totalHarga").innerText = subTotalHargaDewasa + subTotalHargaAnak;
+    </script>
+  </body>
+</html>

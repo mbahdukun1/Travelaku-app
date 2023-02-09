@@ -1,137 +1,167 @@
-
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="form.css" />
+  </head>
+  <style></style>
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<style>
-</style>
-
-<body>
-
-    <main>
-
-        <div class="container">
-            <h3 style="margin-top: 25px;" class="pb-2 border-bottom">BOOKING FORM</h3>
-            <img src="foto/travelaku remove bg.jpg" class="img-circle" alt="Cinque Terre">
-            <div class="row">
-                <div class="col-8">
-                    <!-- Form Pemesanan Tiket Wisata -->
-                    <form method="post" action="pesanTiket.php">
-                        <div class="mb-3 row">
-                            <label for="inputNama" class="col-sm-2 col-form-label">Full Name</label>
-                            <div class="col-sm-5">
-                                <input type="text" class="form-control" id="inputNama" placeholder="Full Name"
-                                    name=namaLengkap>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="inputIdentitas" class="col-sm-2 col-form-label">Id</label>
-                            <div class="col-sm-5">
-                                <input type="text" class="form-control" id="inputIdentitas"
-                                    placeholder="Id" name=nomorIdentitas minlength="16" maxlength="16">
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="inputNoHp" class="col-sm-2 col-form-label">Phone Number</label>
-                            <div class="col-sm-5">
-                                <input type="text" class="form-control" id="inputNoHp" placeholder="Phone Number" name=noHp
-                                    minlength="11" maxlength="12">
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="inputWisata" class="col-sm-2 col-form-label">Destination</label>
-                            <div class="col-sm-5">
-                                <select id="inputWisata" class="form-select" placeholder="Tempat Wisata" name="wisata">
-                                    <option value="Datau Toba">Lake Toba</option>
-                                    <option value="Bromo Mountain">Mount Bromo</option>
-                                    <option value="Gili Terawang">Gili Trawangan</option>
-                                    <option value="Semeru">Semeru</option>
-                                    <option value="Bali">Bali</option>
-                                    <option value="Lombok">Lombok</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="inputTanggal" class="col-sm-2 col-form-label">Visit Date</label>
-                            <div class="col-sm-5">
-                                <input type="date" data-date-format="DD/MM/YYY" class="form-control" id="inputTanggal"
-                                    placeholder="Tanggal Kunjungan" name=tanggal required autofocus>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="inputPengunjungDewasa" class="col-sm-2 col-form-label">Adults</label>
-                            <div class="col-sm-5">
-                                <input type="number" class="form-control" id="inputPengunjungDewasa"
-                                    placeholder="Adults" name=jumlahDewasa>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="inputPengunjungAnak" class="col-sm-2 col-form-label">Children</label>
-                            <div class="col-sm-5">
-                                <input type="number" class="form-control" id="inputPengunjungAnak"
-                                    placeholder="Children" name=jumlahAnakAnak>
-                            </div>
-                        </div>
-                        <!-- <div class="mb-3 row">
-                            <label for="hargaTiket" class="col-sm-2 col-form-label">Harga Tiket</label>
-                            <div class="col-sm-5">
-                                <input type="text" readonly class="form-control-plaintext" id="hargaTiket"
-                                    name="hargaTiket" value="Rp. 1000000">
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="totalBayar" class="col-sm-2 col-form-label">Total Bayar</label>
-                            <div class="col-sm-5">
-                                <input type="text" readonly class="form-control-plaintext" id="totalBayar"
-                                    name="totalBayar" value="Rp. ">
-                            </div>
-                        </div> -->
-                        <div class="mb-3 row">
-                            <div class="col-sm-10">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="agree" name="agree">
-                                    <label class="form-check-label" for="gridCheck">
-                                        I have agreed to the terms and conditions.
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <button type="Button" class="btn btn-primary" name="hitungTotalBayar"
-                            id="hitungTotalBayar">Hitung Total Bayar</button> -->
-                        <button type="submit" class="btn btn-primary" name="pesanTiket" id="pesanTiket" onClick="location.href='order.html'">Order
-                            Ticket</button>
-                        <button type="reset" class="btn btn-danger" name="cancel" onClick="location.href='index.html'">Cancel Order</button>
-                        <div class="mb-3 row"></div>
-                    </form>
+  <body>
+      <div class="content-container">
+        <div class="row justify-content-lg-end">
+          <div class="col-9 ">
+            <img src="foto/travelaku remove bg.jpg" width="55%"  class="img-circle" alt="Cinque Terre" />
+            <!-- Form Pemesanan Tiket Wisata -->
+            <form method="get" action="order.html">
+              <div class="mb-3 row">
+                <label for="inputNama" style="font-weight:bold" class="col-sm-2 col-form-label">FULL NAME</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" id="inputNama" placeholder="Full Name" required name="namaLengkap" />
                 </div>
-            </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="inputIdentitas" style="font-weight:bold" class="col-sm-2 col-form-label">NO. IDENTITY</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" id="inputIdentitas" placeholder="Identity Number" name="nomorIdentitas" minlength="16" maxlength="16" required />
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="inputNoHp" style="font-weight:bold" class="col-sm-2 col-form-label">NO. HANDPHONE</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" id="inputNoHp" placeholder="Phone Number" name="noHp" required minlength="11" maxlength="12" />
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="inputWisata" style="font-weight:bold" class="col-sm-2 col-form-label">DESTINATIONS</label>
+                <div class="col-sm-5">
+                  <select id="inputWisata" class="form-select" placeholder="Tempat Wisata" name="wisata" onchange="updateHargaPaketTravel()" required></select>
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="inputTanggal" style="font-weight:bold" class="col-sm-2 col-form-label">VISIT DATE</label>
+                <div class="col-sm-5">
+                  <input type="date" data-date-format="DD/MM/YYY" class="form-control" id="inputTanggal" placeholder="Tanggal Kunjungan" name="tanggal" required autofocus />
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="inputPengunjungDewasa" style="font-weight:bold" class="col-sm-2 col-form-label">ADULT VISITORS</label>
+                <div class="col-sm-5">
+                  <input type="number" class="form-control" id="inputPengunjungDewasa" placeholder="0" onchange="cekJumlahPengunjungValid()" required name="jumlahDewasa" />
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="inputPengunjungAnak" style="font-weight:bold" class="col-sm-2 col-form-label">CHILD VISITORS</label>
+                <div class="col-sm-5">
+                  <input type="number" class="form-control" id="inputPengunjungAnak" placeholder="0" onchange="cekJumlahPengunjungValid()" name="jumlahAnakAnak" />
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="hargaTiket" style="font-weight:bold" class="col-sm-2 col-form-label">TICKET PRICE</label>
+                <div class="col-sm-5">
+                  <input type="text" readonly class="form-control-plaintext" style="font-weight:bold" id="hargaTiketDewasa" name="hargaTiketDewasa" value="Rp. " />
+                  <input type="text" readonly class="form-control-plaintext" id="hargaTiketAnak" style="font-weight:bold" name="hargaTiketAnak" value="Rp. " />
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="totalBayar" style="font-weight:bold" style="font-weight:bold" class="col-sm-2 col-form-label">TOTAL PAY</label>
+                <div class="col-sm-5">
+                  <input type="text" readonly class="form-control-plaintext" id="totalBayar" style="font-weight:bold" name="totalBayar" value="Rp. " />
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <div class="col-sm-10">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="agree" name="agree" required />
+                    <label class="form-check-label" style="font-weight:bold" for="gridCheck"> I Have Read All The Terms Above And Agree To All Terms. </label>
+                  </div>
+                </div>
+              </div>
+              <button type="Button" class="btn btn-warning" name="hitungTotalBayar" id="hitungTotalBayar">Calculate Total Pay</button>
+              <button type="submit" class="btn btn-primary" name="pesanTiket" id="pesanTiket">Order Ticket</button>
+              <button type="reset" class="btn btn-danger" name="cancel" onClick="location.href='index.html'">Back To Main Pages</button>
+              <div class="mb-3 row"></div>
+            </form>
+          </div>
         </div>
-    </main>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+  <script src="./database/database.js"></script>
+  <script type="text/javascript">
+    // init database berdasarkan js/database.js
+    const listPaketTravel = getDataPaketTravel();
 
-</body>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
-    integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
-</script>
+    // construct element list select option tempat wisata
+    const inputWisata = document.getElementById("inputWisata");
+    for (let i = 0; i < listPaketTravel.length; i++) {
+      const { id, place } = listPaketTravel[i];
 
-<script type="text/javascript">
-let hitungTotalBayar = document.getElementById("hitungTotalBayar");
-hitungTotalBayar.addEventListener("click", function() {
-    let pengunjungDewasa = parseInt(document.getElementById("inputPengunjungDewasa")
-        .value);
-    let pengunjungAnak = parseInt(document.getElementById("inputPengunjungAnak")
-        .value);
-    document.getElementById("totalBayar").value = "Rp. " + (pengunjungDewasa * 1000000 + pengunjungAnak * (
-        1000000 /
-        2));
-});
-</script>
+      const optionPaketTravel = document.createElement("option");
 
+      optionPaketTravel.value = id;
+      optionPaketTravel.innerText = place;
+
+      inputWisata.appendChild(optionPaketTravel);
+    }
+
+    // construct init harga tiket
+    let idPaketTravel = document.getElementById("inputWisata").value;
+    const paketTravel = getDataPaketTravelById(idPaketTravel);
+    document.getElementById("hargaTiketDewasa").value = `Rp. ${paketTravel.hargaTicketDewasa}`;
+    document.getElementById("hargaTiketAnak").value = `Rp. ${paketTravel.hargaTicketAnak}`;
+
+    // update harga tiket on change item pada select option paket travel / tempat wisata
+    function updateHargaPaketTravel() {
+      let idPaketTravel = document.getElementById("inputWisata").value;
+      const paketTravel = getDataPaketTravelById(idPaketTravel);
+      document.getElementById("hargaTiketDewasa").value = `Rp. ${paketTravel.hargaTicketDewasa}`;
+      document.getElementById("hargaTiketAnak").value = `Rp. ${paketTravel.hargaTicketAnak}`;
+    }
+
+    // function cekJumlahPengunjungValid() {
+    //   let pengunjungDewasa = parseInt(document.getElementById("inputPengunjungDewasa").value);
+    //   let pengunjungAnak = parseInt(document.getElementById("inputPengunjungAnak").value);
+
+    //   if ((pengunjungDewasa < 1 && pengunjungAnak < 0) || isNaN(pengunjungDewasa) || isNaN(pengunjungAnak)) {
+    //     document.getElementById("inputPengunjungDewasa").value = 0;
+    //     document.getElementById("inputPengunjungAnak").value = 0;
+    //     return alert("Masukkan jumlah pengunjung dengan benar!");
+    //   }
+    // }
+
+    // hutung total bayar
+    let hitungTotalBayar = document.getElementById("hitungTotalBayar");
+    hitungTotalBayar.addEventListener("click", function () {
+      let pengunjungDewasa = parseInt(document.getElementById("inputPengunjungDewasa").value);
+      let pengunjungAnak = parseInt(document.getElementById("inputPengunjungAnak").value);
+
+      if (!pengunjungDewasa) {
+        console.log("invalid, harus ada orang dewasa");
+        return;
+      }
+      if (!pengunjungAnak) {
+        pengunjungAnak = 0;
+      }
+
+      let idPaketTravel = document.getElementById("inputWisata").value;
+
+      const paketTravel = getDataPaketTravelById(idPaketTravel);
+
+      document.getElementById("totalBayar").value = "Rp. " + (pengunjungDewasa * paketTravel.hargaTicketDewasa + pengunjungAnak * paketTravel.hargaTicketAnak);
+    });
+
+    // pesan tiket setelah klik total bayar
+    let pesanTiket = document.getElementById("pesanTiket");
+    pesanTiket.addEventListener("click", function () {
+      const totalBayar = document.getElementById("totalBayar").value;
+      let numberTotalBayar = totalBayar.subs;
+      console.log(typeof totalBayar, totalBayar);
+      if (!isNaN(totalBayar)) {
+        console.log(totalBayar);
+      }
+    });
+  </script>
 </html>
