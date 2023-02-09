@@ -125,8 +125,10 @@
     height: 100%;
     width: 100%;
     background-color: #000;
-    opacity: 50%;
     z-index: -1;
+    background-image: url('foto1.jpg');
+    background-attachment: fixed; 
+    background-size: 100% 100%;
   }
   .tombol-menu {
     position: absolute;
@@ -238,11 +240,13 @@
     display: inline;
     background: url("foto/quote-icon.png") no-repeat;
     padding: 40px;
+    flex-direction: column;
   }
   .owner img{
-    width: 100%;
+    width: 300px;
     box-shadow: 0px -10px 30px #ccc ;
     border-radius: 5px;
+    
   }
   .blog .area {
     width: 47%;
