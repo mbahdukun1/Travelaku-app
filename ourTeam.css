@@ -7,7 +7,7 @@
 }
 
 body {
-  background-image: url(/foto/background-bromo.jpg);
+  background-image: url(./foto/background-bromo.jpg);
   background-size: cover;
   background-attachment: fixed;
   /* border: 2px solid blue; */
