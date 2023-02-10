@@ -284,6 +284,7 @@ section.quote .layar-dalam p {
   color: #333;
   text-decoration: none;
   transition: color 0.5s ease;
+  text-align: center;
 }
 .blog .area .text article a:hover {
   color: #ccc;
